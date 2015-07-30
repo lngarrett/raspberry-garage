@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'sinatra'
+require 'json'
 require './lib/garage.rb'
 
 set :server, 'thin'
@@ -25,9 +26,11 @@ post '/right/close' do
 end
 
 get '/left/state' do
-  "#{$lDoor.opened}"
+  content_type :json
+  { :state => "#{$lDoor.opened}" }.to_json
 end
 
 get '/right/state' do
-  "#{$rDoor.opened}"
+  content_type :json
+  { :state => "#{$lDoor.opened}" }.to_json
 end
