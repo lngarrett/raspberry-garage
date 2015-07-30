@@ -19,7 +19,7 @@ module Garage
       if opened
         return [0 ,'Door opened']
       else
-        return [2 ,'Tried to open door, sensor mismatchd']
+        return [2 ,'Tried to open door, sensor mismatch']
       end
     end
     def close
@@ -34,7 +34,7 @@ module Garage
       unless opened
         return [0 ,'Door closed']
       else
-        return [2 ,'Tried to close door, sensor mismatchd']
+        return [2 ,'Tried to close door, sensor mismatch']
       end
     end
     def opened
