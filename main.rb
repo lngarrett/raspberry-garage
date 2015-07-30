@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'sinatra'
 require_relative 'lib/gpio.rb'
 
