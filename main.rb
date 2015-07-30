@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'sinatra'
-require_relative 'lib/garage.rb'
+require './lib/garage.rb'
 
 set :server, 'thin'
 set :bind, '0.0.0.0'
