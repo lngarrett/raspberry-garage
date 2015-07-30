@@ -25,9 +25,9 @@ post '/right/close' do
 end
 
 get '/left/state' do
-  $ldoor.opened
+  $lDoor.opened
 end
 
 get '/right/state' do
-  $rdoor.opened
+  $rDoor.opened
 end
