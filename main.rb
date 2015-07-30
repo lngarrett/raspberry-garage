@@ -10,8 +10,9 @@ $lDoor = Garage::Door.new(23, 17)
 $rDoor = Garage::Door.new(24, 21)
 
 post '/left/open' do
+  response = $lDoor.open
   content_type :json
-  { :result => "#{$lDoor.open}" }.to_json
+  { :code => "#{response['code']}", :message => "#{response['message']}" }.to_json
 end
 
 post '/right/open' do
