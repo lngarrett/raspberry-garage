@@ -1,5 +1,5 @@
 require 'pi_piper'
-include PiPier
+include PiPiper
 
 module Garage
   class Door
