@@ -13,7 +13,13 @@ module Garage
         sleep 1
         @control.off
         sleep 5
-        if opened then return true else return false end
+      else
+        return [1 ,'Door already open']
+      end
+      if opened
+        return [0 ,'Door opened']
+      else
+        return [2 ,'Tried to open door, sensor mismatchd']
       end
     end
     def close
@@ -21,8 +27,14 @@ module Garage
         @control.on
         sleep 1
         @control.off
-        sleep 5
-        unless opened then return true else return false end
+        sleep 20
+      else
+        return [1 ,'Door already closed']
+      end
+      unless opened
+        return [0 ,'Door closed']
+      else
+        return [2 ,'Tried to close door, sensor mismatchd']
       end
     end
     def opened
