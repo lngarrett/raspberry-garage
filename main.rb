@@ -2,6 +2,9 @@
 require 'sinatra'
 require_relative 'lib/gpio.rb'
 
+set :server, 'thin'
+set :bind, '0.0.0.0'
+
 $lDoor = Garage::Door.new(23, 17)
 $rDoor = Garage::Door.new(24, 21)
 
