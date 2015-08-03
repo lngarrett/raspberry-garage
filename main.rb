@@ -6,7 +6,7 @@ require './lib/garage.rb'
 set :server, 'thin'
 set :bind, '0.0.0.0'
 
-$lDoor = Garage::Door.new(23, 17)
+$lDoor = Garage::Door.new(23, 8)
 $rDoor = Garage::Door.new(24, 21)
 
 post '/left/open' do
