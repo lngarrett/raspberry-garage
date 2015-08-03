@@ -5,7 +5,7 @@ module Garage
   class Door
     def initialize(controlPin, sensorPin)
       @control = PiPiper::Pin.new(:pin => controlPin, :direction => :out)
-      @sensor = PiPiper::Pin.new(:pin => sensorPin, :direction => :in)
+      @sensor = PiPiper::Pin.new(:pin => sensorPin, :direction => :in, :pull => :down)
     end
     def open
       unless opened  then
