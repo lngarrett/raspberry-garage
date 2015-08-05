@@ -16,7 +16,7 @@ module Garage
       else
         return [1 ,'Door already open']
       end
-      if opened
+      if opened == 1
         return [0 ,'Door opened']
       else
         return [2 ,'Tried to open door, sensor mismatch']
@@ -31,7 +31,7 @@ module Garage
       else
         return [1 ,'Door already closed']
       end
-      unless opened
+      unless opened == 1
         return [0 ,'Door closed']
       else
         return [2 ,'Tried to close door, sensor mismatch']
