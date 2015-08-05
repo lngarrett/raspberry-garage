@@ -8,7 +8,7 @@ module Garage
       @sensor = PiPiper::Pin.new(:pin => sensorPin, :direction => :in, :pull => :down)
     end
     def open
-      unless opened  then
+      unless opened == 1  then
         @control.on
         sleep 1
         @control.off
@@ -23,7 +23,7 @@ module Garage
       end
     end
     def close
-      if opened  then
+      if opened == 1 then
         puts "opened was #{opened}"
         @control.on
         sleep 1
