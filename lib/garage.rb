@@ -24,7 +24,6 @@ module Garage
     end
     def close
       if opened == 1 then
-        puts "opened was #{opened}"
         @control.on
         sleep 1
         @control.off
