@@ -6,8 +6,9 @@ require './lib/garage.rb'
 set :server, 'thin'
 set :bind, '0.0.0.0'
 
-$lDoor = Garage::Door.new(23, 8)
-$rDoor = Garage::Door.new(24, 21)
+# initialize(controlPin, sensorPin)
+$lDoor = Garage::Door.new(2, 3)
+$rDoor = Garage::Door.new(4, 17)
 
 post '/left/open' do
   code, message = $lDoor.open
