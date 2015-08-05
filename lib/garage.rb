@@ -24,6 +24,7 @@ module Garage
     end
     def close
       if opened  then
+        puts "opened was #{opened}"
         @control.on
         sleep 1
         @control.off
