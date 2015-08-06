@@ -12,11 +12,12 @@ module Garage
         @control.on
         sleep 1
         @control.off
-        sleep 5
+        wait_for_door(20, 1)
       else
         return [1 ,'Door already open']
       end
-      if opened == 1
+
+      if result
         return [0 ,'Door opened']
       else
         return [2 ,'Tried to open door, sensor mismatch']
@@ -27,11 +28,12 @@ module Garage
         @control.on
         sleep 1
         @control.off
-        sleep 20
+        result = wait_for_door(20, 0)
       else
         return [1 ,'Door already closed']
       end
-      unless opened == 1
+
+      if result
         return [0 ,'Door closed']
       else
         return [2 ,'Tried to close door, sensor mismatch']
@@ -39,6 +41,15 @@ module Garage
     end
     def opened
       return @sensor.read
+    end
+    def wait_for_door(timeout, desired_state)
+      attempts = timeout
+      until attempts == 0
+        return true if @sensor.opened == desired_state
+        attempts = attempts - 1
+        sleep 1
+      end
+      return false
     end
   end
 end
