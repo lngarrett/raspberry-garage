@@ -12,7 +12,7 @@ module Garage
         @control.on
         sleep 1
         @control.off
-        wait_for_door(20, 1)
+        result = wait_for_door(20, 1)
       else
         return [1 ,'Door already open']
       end
