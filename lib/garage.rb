@@ -45,7 +45,7 @@ module Garage
     def wait_for_door(timeout, desired_state)
       attempts = timeout
       until attempts == 0
-        return true if @sensor.opened == desired_state
+        return true if @sensor.read == desired_state
         attempts = attempts - 1
         sleep 1
       end
